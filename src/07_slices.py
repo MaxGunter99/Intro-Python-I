@@ -35,3 +35,5 @@ s = "Hello, world!"
 
 # Output just the 8th-12th characters: "world"
 print()
+
+# RUN IN TERMINAL | python3 07_slices.py |
