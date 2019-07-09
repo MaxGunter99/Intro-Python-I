@@ -22,3 +22,65 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+user_input = []
+date = input( "Please Enter A Date! 🗓\n" )
+
+# NO INPUT
+if len(date) == 0:
+  i = datetime.now()
+  print( "The current month is:" , i.strftime("%B"), "!" , "Please try again." )
+
+# MONTH AND YEAR
+else:
+  i = datetime.now()
+  user_input.append( date )
+  for i in user_input:
+    you = i.split(" ")
+    selected_month = you[0]
+    if you[0] == "january":
+      you[0] = 1
+    elif you[0] == "february":
+      you[0] = 2
+    elif you[0] == "march":
+      you[0] = 3
+    elif you[0] == "april":
+      you[0] = 4
+    elif you[0] == "may":
+      you[0] = 5
+    elif you[0] == "june":
+      you[0] = 6
+    elif you[0] == "july":
+      you[0] = 7
+    elif you[0] == "august":
+      you[0] = 8
+    elif you[0] == "september":
+      you[0] = 9
+    elif you[0] == "october":
+      you[0] = 10
+    elif you[0] == "november":
+      you[0] = 11
+    elif you[0] == "december":
+      you[0] = 12
+
+    # JUST MONTH
+    if len(you) >= 3:
+      print( "Please use format ( month year )" )
+      break
+
+    if len(you) == 1:
+      i = datetime.now()
+      year = i.strftime("%j")
+      days_until_end_of_year = 365 - int(year)
+      print( "Days of", selected_month , calendar.monthcalendar(int(i.strftime("%Y")), you[0]))
+      print( "Days until the end of this year:", days_until_end_of_year )
+
+    else:
+      i = datetime.now()
+      year = i.strftime("%j")
+      days_until_end_of_year = 365 - int(year)
+      print( "Days of", selected_month , calendar.monthcalendar(int(you[1]), you[0]))
+      print( "Days until the end of this year:", days_until_end_of_year )
+
+# TYPE IN A MONTH AND THE YEAR
+# RUN IN TERMINAL | python3 14_cal.py |
