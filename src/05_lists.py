@@ -19,15 +19,15 @@ y = [8, 9, 10]
 
 # Change x so that it is [1, 2, 3, 4, 9, 10]
 # YOUR CODE HERE 
-# y.remove(8)
+y.remove(8)
 # print(x + y)
 # RETURNS [1, 2, 3, 4, 9, 10]
 
 # Change x so that it is [1, 2, 3, 4, 9, 99, 10]
 # YOUR CODE HERE 
-# x.append(4)
-# y.remove(8)
-# y.insert( 2 , 99 )
+x.append(4)
+y.remove(8)
+y.insert( 2 , 99 )
 # print(x + y)
 # RETURNS [1, 2, 3, 4, 9, 10, 99]
 
