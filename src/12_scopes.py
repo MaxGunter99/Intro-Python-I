@@ -1,3 +1,5 @@
+import os
+os.system( 'clear' )
 # Experiment with scopes in Python.
 # Good reading: https://www.programiz.com/python-programming/global-local-nonlocal-variables
 
@@ -5,6 +7,7 @@
 x = 12
 
 def changeX():
+    global x
     x = 99
 
 changeX()
@@ -16,9 +19,11 @@ print(x)
 # This nested function has a similar problem.
 
 def outer():
+    global y
     y = 120
 
     def inner():
+        global y
         y = 999
 
     inner()
