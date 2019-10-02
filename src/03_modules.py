@@ -1,3 +1,5 @@
+import os
+os.system( 'clear' )
 """
 In this exercise, you'll be playing around with the sys module,
 which allows you to access many system specific variables and
@@ -11,11 +13,19 @@ import sys
 # Print out the command line arguments in sys.argv, one per line:
 # YOUR CODE HERE
 
+# this is the script name
+
+print( f'Command line: { sys.argv[0] }' )
+
 # Print out the OS platform you're using:
 # YOUR CODE HERE
 
+print( f'OS Platform: { sys.platform }' )
+
 # Print out the version of Python you're using:
 # YOUR CODE HERE
+
+print( f"Python version: {sys.version_info.major}" )
 
 
 import os
@@ -24,8 +34,14 @@ import os
 # Print the current process ID
 # YOUR CODE HERE
 
+print( f'Process ID: { os.getpid() }' )
+
 # Print the current working directory (cwd):
 # YOUR CODE HERE
 
+print( f'Current directory path: { os.path.abspath("03_modules.py") }' )
+
 # Print out your machine's login name
 # YOUR CODE HERE
+
+print( f'Machines Login Name: { os.getlogin() }' )

@@ -1,3 +1,5 @@
+import os
+os.system( 'clear' )
 """
 The Python standard library's 'calendar' module allows you to
 render a calendar to your terminal.
@@ -22,3 +24,37 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+def date():
+  spec = input( 'Please Choose Month & Year ( ex: 9, 2019 ) ' ).split( ',' )
+  print( spec )
+
+  if ( spec == '' ):
+    os.system( 'clear' )
+    x = datetime.now()
+    c = calendar.TextCalendar( calendar.SUNDAY )
+    str = c.formatmonth( x.year , x.month )
+    print( str )
+    print( '--------------------' )
+    print( 'Please try again' )
+
+  elif ( len( spec ) == 1 ):
+    os.system( 'clear' )
+    c = calendar.TextCalendar( calendar.SUNDAY )
+    str = c.formatmonth( 2019 , int(spec[0]) )
+    print( str )
+    print( '--------------------' )
+
+  elif ( len( spec ) == 2 ):
+    os.system( 'clear' )
+    c = calendar.TextCalendar( calendar.SUNDAY )
+    str = c.formatmonth( int( spec[1] ) , int( spec[0]) )
+    print( str )
+    print( '--------------------' )
+
+  else:
+    os.system( 'clear' )
+    print( 'Please try again using a valid input ( ex: 9, 2019 )' )
+
+
+date()
